@@ -1,0 +1,9 @@
+myhostname = local.ingest.sa2qa.us
+mydestination = $myhostname, localhost.localdomain, localhost
+relayhost = 
+inet_interfaces = all
+inet_protocols = ipv4
+mynetworks = 127.0.0.0/8
+mailbox_command = /usr/bin/procmail
+recipient_delimiter = +
+home_mailbox = Maildir/

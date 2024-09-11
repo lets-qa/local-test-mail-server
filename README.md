@@ -15,4 +15,22 @@ Set up is simple:
 2. Begin sending emails from your application.
 3. Monitor and manage mails received by the server as needed for your testing scenarios.
 
+## Example Telnet Transaction
+
+To test the mail server manually, you can use Telnet to simulate sending an email. Here’s a step-by-step example:
+
+```bash
+telnet localhost 25
+HELO local.test
+MAIL FROM:<automation@local.ingest.lets.qa>
+RCPT TO:<test@local.ingest.lets.qa>
+DATA
+Subject: Test Email
+
+This is a test email sent via Telnet.
+.
+QUIT
+```
+This sequence initiates a connection to the mail server, sends an email from `example@local.ingest.lets.qa` to `test@local.ingest.lets.qa`, and then closes the connection.
+
 By using this local mail server, you ensure that all mail traffic remains contained within your development environment, providing a secure and controlled testing framework.
