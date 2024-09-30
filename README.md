@@ -39,6 +39,7 @@ By using this local mail server, you ensure that all mail traffic remains contai
 To Run:
 
  docker build . -t local-test-mail-server
+ 
  docker run -p 25:25 -v ~/mail:/var/mail -t local-test-mail-server
 
 
