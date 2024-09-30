@@ -31,6 +31,6 @@ This is a test email sent via Telnet.
 .
 QUIT
 ```
-This sequence initiates a connection to the mail server, sends an email from `example@local.ingest.lets.qa` to `test@local.ingest.lets.qa`, and then closes the connection.
+This sequence initiates a connection to the mail server, sends an email from `automation@local.ingest.lets.qa` to `automation@local.ingest.lets.qa`, and then closes the connection.
 
 By using this local mail server, you ensure that all mail traffic remains contained within your development environment, providing a secure and controlled testing framework.
