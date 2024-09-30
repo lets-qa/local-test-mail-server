@@ -23,7 +23,7 @@ To test the mail server manually, you can use Telnet to simulate sending an emai
 telnet localhost 25
 HELO local.test
 MAIL FROM:<automation@local.ingest.lets.qa>
-RCPT TO:<test@local.ingest.lets.qa>
+RCPT TO:<automation@local.ingest.lets.qa>
 DATA
 Subject: Test Email
 
