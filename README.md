@@ -34,3 +34,12 @@ QUIT
 This sequence initiates a connection to the mail server, sends an email from `automation@local.ingest.lets.qa` to `automation@local.ingest.lets.qa`, and then closes the connection.
 
 By using this local mail server, you ensure that all mail traffic remains contained within your development environment, providing a secure and controlled testing framework.
+
+
+To Run:
+
+ docker build . -t local-test-mail-server
+ docker run -p 25:25 -v ~/mail:/var/mail -t local-test-mail-server
+
+
+
