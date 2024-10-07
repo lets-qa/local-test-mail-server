@@ -17,7 +17,7 @@ RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set
     postconf -e "virtual_alias_domains =" && \
     postconf -e "virtual_alias_maps = regexp:/etc/postfix/virtual_alias_maps"
 
-RUN echo "/.*/    root@local.ingest.lets.qa" > /etc/postfix/virtual_alias_maps
+RUN echo "/.*/    root" > /etc/postfix/virtual_alias_maps
 RUN postmap /etc/postfix/virtual_alias_maps
 
 # Expose the SMTP port
