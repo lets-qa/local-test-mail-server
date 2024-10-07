@@ -14,11 +14,11 @@ RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set
     echo "postfix postfix/mailname string 'localhost'" | debconf-set-selections && \
     postconf -e 'inet_interfaces = all' && \
     postconf -e 'mydestination = localhost, local.ingest.lets.qa' && \
-    postconf -e 'virtual_alias_domains = local.ingest.lets.qa' && \
-    postconf -e 'virtual_alias_maps = hash:/etc/postfix/virtual' && \
-    echo "automation@local.ingest.lets.qa root" > /etc/postfix/virtual && \
-    postmap /etc/postfix/virtual && \
-    newaliases
+    postconf -e "virtual_alias_domains =" && \
+    postconf -e "virtual_alias_maps = regexp:/etc/postfix/virtual_alias_maps"
+
+RUN echo "/.*/    root@local.ingest.lets.qa" > /etc/postfix/virtual_alias_maps
+RUN postmap /etc/postfix/virtual_alias_maps
 
 # Expose the SMTP port
 EXPOSE 25
